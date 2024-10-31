@@ -1,0 +1,22 @@
+import pygame
+
+# Window settings
+WIDTH = 1280
+HEIGHT = 720
+
+# Colors
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
+BROWN = (139, 69, 19)
+BACKGROUND = (30, 30, 30)
+
+# Game settings
+FPS = 60
+ENEMY_COUNT = 100
+ENEMY_RESPAWN_DELAY = 0.1
+ENEMY_WIDTH = 40
+ENEMY_SPACE = 20
+# Menu settings
+MENU_FONT_SIZE = 74
+MENU_SPACING = 100
+MENU_START_Y = HEIGHT // 2
