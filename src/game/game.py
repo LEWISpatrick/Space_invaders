@@ -1,5 +1,6 @@
 from src.screens.home_screen import HomeScreen
 from src.screens.game_screen import GameScreen
+from src.screens.difficulty_screen import DifficultyScreen
 import pygame
 from src.constants import WIDTH, HEIGHT, FPS
 
@@ -14,7 +15,8 @@ class Game:
         self.screens = {
             'home': HomeScreen(self),
             'game': GameScreen(self, multiplayer=False),
-            'multiplayer': GameScreen(self, multiplayer=True)
+            'multiplayer': GameScreen(self, multiplayer=True),
+            'difficulty': DifficultyScreen(self)
         }
         self.current_screen = 'home'
     

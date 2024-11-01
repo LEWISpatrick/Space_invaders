@@ -3,7 +3,7 @@ from src.constants import WIDTH
 from src.entities.bullet import Bullet
 
 class Player:
-    def __init__(self, x, y, controls=None):
+    def __init__(self, x, y, controls=None, shoot_direction=1):
         self.x = x
         self.y = y
         self.width = 60
@@ -12,7 +12,7 @@ class Player:
         self.color = (139, 69, 19)  # brown
         self.ball_radius = 15
         self.stick_width = 10
-        # Default controls for player 1
+        self.shoot_direction = shoot_direction
         self.controls = controls or {
             'left': pygame.K_LEFT,
             'right': pygame.K_RIGHT,
@@ -30,10 +30,9 @@ class Player:
         pygame.draw.circle(surface, self.color, (self.x + self.width - self.ball_radius, self.y + self.height - self.ball_radius), self.ball_radius)
 
     def shoot(self, surface):
-        # Create bullet at the center of the player's stick
-        bullet_x = self.x + self.width//2 - 5  # 5 is half of bullet width
+        bullet_x = self.x + self.width//2 - 5
         bullet_y = self.y
-        bullet = Bullet(bullet_x, bullet_y)
+        bullet = Bullet(bullet_x, bullet_y, self.shoot_direction)
         bullet.draw(surface)
         return bullet
 

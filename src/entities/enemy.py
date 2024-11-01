@@ -3,12 +3,12 @@ from src.constants import WHITE, RED
 from src.constants import WIDTH
 
 class Enemy:
-    def __init__(self, x, y):
+    def __init__(self, x, y, speed=15):
         self.x = x
         self.y = y
         self.width = 40
         self.height = 40
-        self.speed = 15
+        self.speed = speed
         self.color = (255, 0, 0)  # Red
 
     def draw(self, surface):
@@ -17,5 +17,5 @@ class Enemy:
     def move(self):
         self.x += self.speed
         if self.x <= 0 or self.x >= WIDTH - self.width:
-            self.speed *= -1
+            self.speed = -self.speed
             self.y += 80
